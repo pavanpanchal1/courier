@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Deploy') {
             steps {
-                sh "scp -r ${WORKSPACE}/* root@${staging_server}:/var/lib/jenkins/workspace/co/"
+                sh "scp -r ${WORKSPACE}/* root@${staging_server}:/htdocs"
             }
         }
     }
