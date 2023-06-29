@@ -1,27 +1,13 @@
-pipeline {
+pipeline{
     agent any
-    
-    stages {
-        stage('Checkout') {
-            steps {
-                // Checkout the source code from your repository
-                checkout scm
-            }
-        }
-        
-        stage('Add Files') {
-            steps {
-                script {
-                    // Copy index.php to the workspace
-                    file('index.php')
-                    // Optionally, you can print a message indicating the file was added
-                    echo "Added index.php to workspace"
-                }
-            }
-        }
-        
-        // Additional stages for your pipeline...
+    environment{
+        staging_server="185.27.134.11"
     }
-    
-    // Post-build actions, notifications, etc.
+    stages{
+        stage(''){
+            steps{
+                sh 'scp ${WORKSPACE}/* root@${staging_server}:htdocs/'
+            }
+        }
+    }
 }
