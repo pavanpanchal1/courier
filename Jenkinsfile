@@ -2,13 +2,13 @@ pipeline {
     agent any
     
     environment {
-        staging_server = "http://myproject.000.pe/"
+        staging_server = "example.infinityfreeapp.com"
     }
     
     stages {
         stage('Deploy') {
             steps {
-                sh "scp -r ${WORKSPACE}/* root@${staging_server}:/htdocs/"
+                sh "scp -r ${WORKSPACE}/* root@${staging_server}:/htdocs/courierp/"
             }
         }
     }
