@@ -84,7 +84,7 @@
     <div class="container">
         <div class="form">
             <form action="send.php" method="post">
-                <label for="">SEND MAIL</label>
+                <label for="">SEND MAILs</label>
                 <div class="email">
                     <input type="email" name="email" id="email" placeholder="email" value="panchalpavan7090@gmail.com">
                 </div>
